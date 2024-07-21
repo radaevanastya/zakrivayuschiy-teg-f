@@ -4,3 +4,66 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+:root.theme-dark {
+    --accent-color: #00CC14;
+    --label-line-color: #000;
+    --background-image: 
+      repeating-linear-gradient(to right, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+      repeating-linear-gradient(to bottom, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+      linear-gradient(to bottom, #007f0c .01%, #004306);
+    
+    --background-color: #000;
+    --main-card-font-weight: 465;
+    --header-card-font-weight: 785;
+
+    --color-button-text: #00CC14;
+}
+
+:root.theme-light {
+    --accent-color: #000;
+    --label-line-color: #fff;
+    --background-image: 
+      repeating-linear-gradient(to right, #d3d3d3 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+      repeating-linear-gradient(to bottom, #d3d3d3 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+      linear-gradient(to bottom, #e7e7e7 .01%, #1a1a1a);
+   
+    --background-color: #fff;
+    --main-card-font-weight: 400;
+    --header-card-font-weight: 700;
+
+    --color-button-text: #fff;
+}
+
+@media (prefers-color-scheme: dark){
+:root {
+  --accent-color: #00CC14;
+  --label-line-color: #000;
+  --background-image: 
+    repeating-linear-gradient(to right, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+    repeating-linear-gradient(to bottom, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+    linear-gradient(to bottom, #007f0c .01%, #004306);
+  
+  --background-color: #000;
+  --main-card-font-weight: 465;
+  --header-card-font-weight: 785;
+
+  --color-button-text: #00CC14;
+}
+}
+
+@media (prefers-color-scheme: light){
+  :root {
+    --accent-color: #000;
+    --label-line-color: #fff;
+    --background-image: 
+      repeating-linear-gradient(to right, #d3d3d3 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+      repeating-linear-gradient(to bottom, #d3d3d3 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+      linear-gradient(to bottom, #e7e7e7 .01%, #1a1a1a);
+   
+    --background-color: #fff;
+    --main-card-font-weight: 400;
+    --header-card-font-weight: 700;
+
+    --color-button-text: #fff;
+}
+}
