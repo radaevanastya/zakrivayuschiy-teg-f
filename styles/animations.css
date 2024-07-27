@@ -12,57 +12,150 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
-.sparks {
-    fill: var(--color-body-heart);
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  animation: path 0.5s ease-in-out infinite alternate;
+  top: 0;
+  left: 0;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button::after {
+  display: block;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width .3s;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+}
+
+.theme-menu__button:hover, .theme-menu__button:disabled {
+  position: relative;
+  opacity: 0.6;
+  transition: opacity 300ms ease;
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+}
+
+/* svg class + средце */
+.like-icon {
+  fill: var(--bg-color-header);
+  inline-size: 39px;
+  block-size: 36px;
+}
+
+.like-icon .heart {
+  transition: fill .1s;
+  transform-origin: center center;
+}
+
+/* тело сердца */
+.like-icon .main-body {
+  fill: var(--bg-color-header);
+  transition: fill .3s;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill .5s 3ms;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--heart-color);
+  transition: fill .3s 6ms;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-color);
+  transition: fill .3s 3ms;
+}
+
+
+/* сердцевина */
+.like-icon .core {
+  fill: var(--bg-color-header);
+  transition: fill .3s 5ms;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--accent-color);
+  transition: fill .3s 3ms;
+}
+
+.card__icon-button:active .core {
+  fill: var(--heart-color);
+  transition: fill .3s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-color);
+  transition: fill .3s;
+}
+
+/* контур */
+.like-icon .contour {
+  fill: var(--accent-color);
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-color);
+  transition: fill .3s 5ms;
+}
+
+
+/* искорки */
+.like-icon .sparks {
+  opacity: 0;
+  fill: var(--heart-color);
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks .3s ease;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale .3s ease;
+}
+
+@keyframes scale {
+  from {
+    scale: 0;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes sparks {
+  from {
     opacity: 0;
   }
-  
-  .main-body {
-    fill: var(--color-none-body-heart);
-    transition: fill .3s linear; 
+
+  to {
+    opacity: 1;
   }
-  
-  .core {
-    fill: var(--color-none-body-heart);
-    transition: fill .3s linear .03s; 
+}
+
+
+@keyframes path {
+  from {
+    left: 8px;
   }
-  
-  .contour {
-    fill: var(--accent-color);
+
+  to {
+    left: 4px;
   }
-  
-  @keyframes pulse {
-      0% {
-        left: -18px;
-      }
-    
-      50% {
-        left: -14px;
-      }
-    
-      100% {
-        left: -18px;
-      }
-    }
-  
-    @keyframes like-skale {
-      0% {
-        transform: scale(1);
-        transform-origin: 50% 50%;
-      }
-    
-      100% {
-        transform: scale(1.5);
-        transform-origin: 50% 50%;
-      }
-    }
-  
-    @keyframes like-shine {
-      0% {
-        opacity: 0;
-      }
-    
-      100% {
-        opacity: 1;
-      }
-    }
+}
