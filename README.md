@@ -1,3 +1,3 @@
 # zakrivayuschiy-teg-f
 
-git@github.com:radaevanastya/zakrivayuschiy-teg-f.git
+https://github.com/radaevanastya/zakrivayuschiy-teg-f.git
