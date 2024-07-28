@@ -1,49 +1,64 @@
-:root.theme-dark {
-  --bg-color-header: #000;
-  --bg-color: #000;
-  --border-color: #00cc14;
-  --accent-color: #00cc14;
-  --linear-gradient-first: #007f0c;
-  --linear-gradient-second: #004306;
-  --mix-blend-color: #00cc14;
-  --stroke-color: #000;
-}
+/* В этом файле вы опишете значения переменных в разных цветовых схемах.
+Придерживайтесь такого именования классов:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
+*/
 
 :root.theme-light {
-  --border-color: #000;
-  --bg-color: #d3d3d3;
-  --linear-gradient-first: #e7e7e7;
-  --linear-gradient-second: #1a1a1a;
-  --accent-color: #000;
-  --mix-blend-color: #fff;
-  --border-color: #000;
-  --bg-color-header: #fff;
-  --stroke-color: #fff;
+    --bg-color: #FFF;
+    --accent-color: #000;
+    --btn-bg-color: #FFF;
+    --bg-img: 
+    repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+    linear-gradient(#e7e7e7, #e7e7e7 0.01%, #1a1a1a);
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --border-color: #000;
-    --bg-color: #d3d3d3;
-    --linear-gradient-first: #e7e7e7;
-    --mix-blend-color: #fff;
-    --linear-gradient-second: #1a1a1a;
-    --accent-color: #000;
-    --border-color: #000;
-    --bg-color-header: #fff;
-    --stroke-color: #fff;
-  }
+    :root {
+        --bg-color: #FFF;
+        --accent-color: #000;
+        --btn-bg-color: #FFF;
+        --bg-img: 
+        repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+        linear-gradient(#e7e7e7, #e7e7e7 0.01%, #1a1a1a);
+    }
+}
+
+:root.theme-dark {
+    --bg-color: #000;
+    --accent-color: #00CC14;
+    --btn-bg-color: #000;
+    --btn-txt-color: #00CC14;
+    --like-contour-color: #00CC14;
+    --logo-shadow-color: #000;
+    --like-main-body-color: #00CC14;
+    --like-core-color: #00CC14;
+    --article-title-font-weight: 785;
+    --article-text-font-weight: 465;
+    --bg-img: 
+    repeating-linear-gradient(90deg, #000, #000 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(#000, #000 2px, transparent 2px, transparent 4px),
+    linear-gradient(#007f0c, #007f0c 0.01%, #004306);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color-header: #000;
-    --bg-color: #000;
-    --mix-blend-color: #00cc14;
-    --border-color: #00cc14;
-    --accent-color: #00cc14;
-    --linear-gradient-first: #007f0c;
-    --linear-gradient-second: #004306;
-    --stroke-color: #000;
-  }
+    :root {
+        --bg-color: #000;
+        --accent-color: #00CC14;
+        --btn-bg-color: #000;
+        --btn-txt-color: #00CC14;
+        --like-contour-color: #00CC14;
+        --logo-shadow-color: #000;
+        --like-main-body-color: #00CC14;
+        --like-core-color: #00CC14;
+        --article-title-font-weight: 785;
+        --article-text-font-weight: 465;
+        --bg-img: 
+        repeating-linear-gradient(90deg, #000, #000 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(#000, #000 2px, transparent 2px, transparent 4px),
+        linear-gradient(#007f0c, #007f0c 0.01%, #004306);
+    }
 }
