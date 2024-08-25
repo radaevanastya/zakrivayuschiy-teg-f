@@ -15,7 +15,7 @@
 
 .like-icon .main-body {
   fill: transparent;
-  transition: fill 0.3s;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon:hover .main-body {
@@ -33,13 +33,14 @@
   transition: fill 0.3s linear 0.05s;
 }
 
-.like-icon .core {
-  fill: transparent;
-  transition: fill 0.3s;
+.like-icon:hover .core {
+  transition: fill 0.3s 0.03s linear;
+  fill: var(--heart-contour-color);
 }
 
-.like-icon:hover .core {
-  fill: var(--like-core-color);
+.like-icon:active .core {
+  transition: fill 0.3s 0.03s linear;
+  fill: var(--heart-sparks-color);
 }
 
 .like-icon:active .core {
@@ -52,7 +53,7 @@
 }
 
 .like-icon .contour {
-  fill: var(--like-contour-color);
+  transition: fill 0.1s linear;
 }
 
 .like-icon.is-liked .contour {
