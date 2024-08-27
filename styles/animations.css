@@ -12,114 +12,125 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
-
-.like-icon .main-body {
-  fill: transparent;
-  transition: fill 0.3s 0.05s linear;
+.theme-menu__button:disabled::before {
+  content: '\25b6';
+  position: absolute;
+  inset-inline-start: -14px;
+  animation: activeMenu 0.5s ease-in-out infinite alternate;
 }
 
-.like-icon:hover .main-body {
-  fill: var(--like-main-body-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon:active .main-body {
-  fill: var(--like-active-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--like-active-color);
-  transition: fill 0.3s linear 0.05s;
+.like-icon:hover {
+  cursor: pointer;
 }
 
 .like-icon:hover .core {
-  transition: fill 0.3s 0.03s linear;
-  fill: var(--heart-contour-color);
-}
-
-.like-icon:active .core {
-  transition: fill 0.3s 0.03s linear;
-  fill: var(--heart-sparks-color);
-}
-
-.like-icon:active .core {
-  fill: var(--like-active-color);
-}
-
-.like-icon.is-liked .core {
-  fill: var(--like-active-color);
+  fill: var(--heart-contour-color, #000000);
   transition: fill 0.3s linear;
+  transition-delay: 0s;
 }
 
-.like-icon .contour {
+.like-icon:hover .main-body {
+  fill: var(--heart-contour-color, #000000);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+}
+
+.card__icon-button:active .core {
+  fill: var(--heart-fill-color, #ff0000);
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--heart-fill-color, #ff0000);
+}
+
+.like-icon:active .core {
+  fill: var(--heart-fill-color, #ff0000);
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-fill-color, #ff0000);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s linear;
+  transition-delay: 0.03s;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+}
+
+.contour {
+  fill: var(--heart-contour-color, #000000);
   transition: fill 0.1s linear;
 }
 
+.sparks {
+  opacity: 0%;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-fill-color, #ff0000);
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-fill-color, #ff0000);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+}
+
 .like-icon.is-liked .contour {
-  fill: var(--like-active-color);
-  transition: fill 0.3s linear 0.06s;
+  fill: var(--heart-fill-color, #ff0000);
+  transition: fill 0.3s linear;
+  transition-delay: 0.06s;
 }
 
 .like-icon.is-liked .heart {
-  animation: like-scale 0.3s ease-in 0.1s alternate;
-}
-
-.like-icon .sparks {
-  fill: var(--like-sparks-color);
-  opacity: 0;
+  animation: heartScale 0.3s ease-in alternate 0.1s;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks-appearance 0.3s ease-in 0.3s alternate;
+  animation: sparks 0.3s ease-in alternate 0.3s;
 }
 
-@keyframes indicates {
-    0% {
-      transform: translateX(-4px);
-    }
-    50% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-4px);
-    }
+@keyframes activeMenu {
+  0% {
+    left: -14px;
   }
-  
-  @keyframes opacity {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0.6;
-    }
+
+  100% {
+    left: -10px;
   }
-  
-  @keyframes outline {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;;
-    }
+}
+
+
+@keyframes heartScale {
+  0% {
+    transform-origin: center;
+    transform: scale(1);
   }
-  
-  @keyframes like-scale {
-    from {
-      transform: scale(1);
-      transform-origin: 50% 50%;
-    }
-    to {
-      transform: scale(1.5);
-      transform-origin: 50% 50%;
-    }
+
+  100% {
+    transform-origin: center;
+    transform: scale(1.5);
   }
-  
-  @keyframes sparks-appearance {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0%;
   }
+
+  100% {
+    opacity: 100%;
+  }
+}
