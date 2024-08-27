@@ -28,20 +28,16 @@
 }
 
 :root.theme-dark {
-    --bg-color: #000;
-    --accent-color: #00CC14;
-    --btn-bg-color: #000;
-    --btn-txt-color: #00CC14;
-    --like-contour-color: #00CC14;
-    --logo-shadow-color: #000;
-    --like-main-body-color: #00CC14;
-    --like-core-color: #00CC14;
-    --article-title-font-weight: 785;
-    --article-text-font-weight: 465;
-    --bg-img: 
-    repeating-linear-gradient(90deg, #000, #000 2px, transparent 2px, transparent 4px),
-    repeating-linear-gradient(#000, #000 2px, transparent 2px, transparent 4px),
-    linear-gradient(#007f0c, #007f0c 0.01%, #004306);
+  --text-weight: 465;
+  --title-weight: 785;
+  --bg-color: #000000;
+  --text-color: #00cc14;
+  --button-text-color: #00cc14;
+  --heart-contour-color: #00cc14;
+  --heart-fill-color: #ff0000;
+  --bg-image: repeating-linear-gradient(to right, #000  0px 2px, transparent 2px 4px),
+              repeating-linear-gradient(to bottom, #000  0px 2px, transparent 2px 4px),
+              linear-gradient(to bottom, #007f0c, #004306);
 }
 
 @media (prefers-color-scheme: dark) {
