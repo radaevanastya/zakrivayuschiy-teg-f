@@ -111,7 +111,7 @@
 
 .theme-menu__button:disabled::before {
   position: absolute;
-  content: "▶";
+  content: "▶️";
   inset-inline-start: -1em;
   inset-block-start: 0;
   animation-name: indicates;
@@ -272,7 +272,7 @@
   font-size: 14px;
   line-height: 12.6px;
   mix-blend-mode: difference;
-  color: var(--btn-txt-color);
+  color: var(--button-text-color, #ffffff);
 }
 
 .card__icon-button {
@@ -298,10 +298,9 @@
 }
 
 .button-save__svg {
-  fill: var(--btn-txt-color);
+  fill: var(--button-text-color, #ffffff);
   inline-size: 28px;
   block-size: 28px;
-  stroke: var(--btn-txt-color);
   mix-blend-mode: difference;
 }
 
